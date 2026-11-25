@@ -1,0 +1,24 @@
+[   0.00] SIM      --- Stop-and-Wait: W=1, m=1 bits, a=2.0, loss=0.2, ack loss=0.2 ---
+[   0.00] SENDER   -> Send frame 0
+[   3.00] RECEIVER <- ACCEPTED frame 0
+[   3.00] CHANNEL  BACKWARD channel DROPPED ACK 0
+[   5.01] SENDER   !! TIMEOUT frame 0
+[   5.01] SENDER   -> Retransmit frame 0
+[   6.01] CHANNEL  FORWARD channel DROPPED frame 0
+[  10.02] SENDER   !! TIMEOUT frame 0
+[  10.02] SENDER   -> Retransmit frame 0
+[  13.02] RECEIVER <- DISCARDED duplicate frame 0
+[  15.02] SENDER   <- ACK 0 received
+[  15.02] SENDER   -> Send frame 1
+[  18.02] RECEIVER <- ACCEPTED frame 1
+[  18.02] CHANNEL  BACKWARD channel DROPPED ACK 1
+[  20.03] SENDER   !! TIMEOUT frame 1
+[  20.03] SENDER   -> Retransmit frame 1
+[  23.03] RECEIVER <- DISCARDED duplicate frame 1
+[  25.03] SENDER   <- ACK 1 received
+[  25.03] SENDER   -> Send frame 0 (data #2)
+[  28.03] RECEIVER <- ACCEPTED frame 0
+[  30.03] SENDER   <- ACK 0 received
+[  30.03] SENDER   -> Send frame 1 (data #3)
+[  33.03] RECEIVER <- ACCEPTED frame 1
+[  33.03] SIM      --- finished: 4 frames delivered, 3 retransmissions, 3 timeouts ---

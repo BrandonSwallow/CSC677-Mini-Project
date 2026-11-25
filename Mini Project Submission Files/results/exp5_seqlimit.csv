@@ -1,0 +1,5 @@
+proto,m,window,limit,legal,errors,delivered
+GBN,2,3,3,True,0,6
+GBN,2,4,3,False,2,6
+SR,2,2,2,True,0,6
+SR,2,3,2,False,2,6

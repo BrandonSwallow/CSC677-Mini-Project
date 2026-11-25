@@ -1,0 +1,38 @@
+[
+ {
+  "proto": "GBN",
+  "m": 2,
+  "window": 3,
+  "limit": 3,
+  "legal": true,
+  "errors": 0,
+  "delivered": 6
+ },
+ {
+  "proto": "GBN",
+  "m": 2,
+  "window": 4,
+  "limit": 3,
+  "legal": false,
+  "errors": 2,
+  "delivered": 6
+ },
+ {
+  "proto": "SR",
+  "m": 2,
+  "window": 2,
+  "limit": 2,
+  "legal": true,
+  "errors": 0,
+  "delivered": 6
+ },
+ {
+  "proto": "SR",
+  "m": 2,
+  "window": 3,
+  "limit": 2,
+  "legal": false,
+  "errors": 2,
+  "delivered": 6
+ }
+]

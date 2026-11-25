@@ -1,0 +1,30 @@
+[   0.00] SIM      --- Selective Repeat: W=3, m=2 bits, a=2.0, loss=0.0, ack loss=0.0 ---
+[   0.00] SENDER   -> Send frame 0
+[   1.00] SENDER   -> Send frame 1
+[   2.00] SENDER   -> Send frame 2
+[   3.00] RECEIVER <- ACCEPTED frame 0
+[   3.00] CHANNEL  BACKWARD channel DROPPED ACK 0
+[   4.00] RECEIVER <- ACCEPTED frame 1
+[   4.00] CHANNEL  BACKWARD channel DROPPED ACK 1
+[   5.00] RECEIVER <- ACCEPTED frame 2
+[   5.00] CHANNEL  BACKWARD channel DROPPED ACK 2
+[   5.01] SENDER   !! TIMEOUT frame 0: resend this frame only
+[   5.01] SENDER   -> Retransmit frame 0
+[   6.01] SENDER   !! TIMEOUT frame 1: resend this frame only
+[   6.01] SENDER   -> Retransmit frame 1
+[   7.01] SENDER   !! TIMEOUT frame 2: resend this frame only
+[   7.01] SENDER   -> Retransmit frame 2
+[   8.01] RECEIVER <- BUFFERED frame 0 (waiting for 3)
+[   9.01] RECEIVER <- BUFFERED frame 1 (waiting for 3)
+[  10.01] RECEIVER <- DISCARDED old duplicate frame 2, re-ACK
+[  10.01] SENDER   <- ACK 0, window base -> 1
+[  10.01] SENDER   -> Send frame 3
+[  11.01] SENDER   <- ACK 1, window base -> 2
+[  11.01] SENDER   -> Send frame 0 (data #4)
+[  12.01] SENDER   <- ACK 2, window base -> 3
+[  12.01] SENDER   -> Send frame 1 (data #5)
+[  13.01] RECEIVER <- ACCEPTED frame 3
+[  13.01] RECEIVER    delivers 3, 0, 1 in order
+[  13.01] RECEIVER ** ERROR: upper layer got data #0, expected data #4
+[  13.01] RECEIVER ** ERROR: upper layer got data #1, expected data #5
+[  13.01] SIM      --- finished: 6 frames delivered, 3 retransmissions, 3 timeouts ---

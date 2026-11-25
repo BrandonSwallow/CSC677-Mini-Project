@@ -1,0 +1,22 @@
+[   0.00] SIM      --- Selective Repeat: W=4, m=3 bits, a=2.0, loss=0.2, ack loss=0.2 ---
+[   0.00] SENDER   -> Send frame 0
+[   1.00] SENDER   -> Send frame 1
+[   2.00] SENDER   -> Send frame 2
+[   2.00] CHANNEL  FORWARD channel DROPPED frame 1
+[   3.00] RECEIVER <- ACCEPTED frame 0
+[   3.00] SENDER   -> Send frame 3
+[   3.00] CHANNEL  BACKWARD channel DROPPED ACK 0
+[   5.00] RECEIVER <- BUFFERED frame 2 (waiting for 1)
+[   5.01] SENDER   !! TIMEOUT frame 0: resend this frame only
+[   5.01] SENDER   -> Retransmit frame 0
+[   6.00] RECEIVER <- BUFFERED frame 3 (waiting for 1)
+[   6.00] CHANNEL  BACKWARD channel DROPPED ACK 3
+[   6.01] SENDER   !! TIMEOUT frame 1: resend this frame only
+[   6.01] SENDER   -> Retransmit frame 1
+[   7.00] SENDER   <- ACK 2 (out of order; base still 0)
+[   8.01] SENDER   !! TIMEOUT frame 3: resend this frame only
+[   8.01] SENDER   -> Retransmit frame 3
+[   8.01] RECEIVER <- DISCARDED old duplicate frame 0, re-ACK
+[   9.01] RECEIVER <- ACCEPTED frame 1
+[   9.01] RECEIVER    delivers 1, 2, 3 in order
+[   9.01] SIM      --- finished: 4 frames delivered, 3 retransmissions, 3 timeouts ---

@@ -1,0 +1,28 @@
+[   0.00] SIM      --- Go-Back-N: W=4, m=3 bits, a=2.0, loss=0.2, ack loss=0.2 ---
+[   0.00] SENDER   -> Send frame 0
+[   1.00] SENDER   -> Send frame 1
+[   2.00] SENDER   -> Send frame 2
+[   2.00] CHANNEL  FORWARD channel DROPPED frame 1
+[   3.00] RECEIVER <- ACCEPTED frame 0
+[   3.00] SENDER   -> Send frame 3
+[   3.00] CHANNEL  BACKWARD channel DROPPED ACK 1
+[   5.00] RECEIVER <- DISCARDED frame 2 (out of order, expecting 1)
+[   5.01] SENDER   !! TIMEOUT frame 0: go back, resend from 0 (4 outstanding, up to 3)
+[   5.01] SENDER   -> Retransmit frame 0
+[   6.00] RECEIVER <- DISCARDED frame 3 (out of order, expecting 1)
+[   6.00] CHANNEL  BACKWARD channel DROPPED ACK 1
+[   6.01] SENDER   -> Retransmit frame 1
+[   7.00] SENDER   <- ACK 1 (cumulative), window base -> 1
+[   7.01] SENDER   -> Retransmit frame 2
+[   8.01] RECEIVER <- DISCARDED frame 0 (out of order, expecting 1)
+[   8.01] SENDER   -> Retransmit frame 3
+[   9.01] RECEIVER <- ACCEPTED frame 1
+[   9.01] CHANNEL  FORWARD channel DROPPED frame 3
+[  10.01] RECEIVER <- ACCEPTED frame 2
+[  10.01] SENDER   <- duplicate ACK 1 ignored
+[  11.01] SENDER   <- ACK 2 (cumulative), window base -> 2
+[  12.01] SENDER   <- ACK 3 (cumulative), window base -> 3
+[  13.02] SENDER   !! TIMEOUT frame 3: go back, resend from 3 (1 outstanding, up to 3)
+[  13.02] SENDER   -> Retransmit frame 3
+[  16.02] RECEIVER <- ACCEPTED frame 3
+[  16.02] SIM      --- finished: 4 frames delivered, 5 retransmissions, 2 timeouts ---
